@@ -1,12 +1,12 @@
-import { Controller, Get, Res } from '@nestjs/common';
-import { Response } from 'express';
+import { Controller, Get, HttpCode } from '@nestjs/common';
 
 @Controller()
 export class AppController {
   constructor() {}
 
   @Get('/health')
-  healthCheck(@Res() res: Response): void {
-    res.sendStatus(200);
+  @HttpCode(200)
+  healthCheck(): void {
+    return;
   }
 }
