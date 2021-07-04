@@ -6,7 +6,7 @@ export class AppController {
   constructor() {}
 
   @Get('/health')
-  healthCheck(@Res() res: Response) {
+  healthCheck(@Res() res: Response): void {
     res.sendStatus(200);
   }
 }
